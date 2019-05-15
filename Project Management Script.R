@@ -38,3 +38,12 @@ ggplot(data=mers) +
   geom_bar(mapping=aes(x=epi.day)) +
   labs(x='Epidemic day', y='Case count', title='Global count of MERS cases by date of symptom onset',
        caption="Data from: https://github.com/rambaut/MERS-Cases/blob/gh-pages/data/cases.csv")
+
+#---------------------------------------------------------------------------------------------
+# Making an Interactive plot
+
+epi.curve <- ggplot(data=mers) +
+  geom_bar(mapping=aes(x=epi.day)) +
+  labs(x='Epidemic day', y='Case count', title='Global count of MERS cases by date of symptom onset',
+       caption="Data from: https://github.com/rambaut/MERS-Cases/blob/gh-pages/data/cases.csv")
+ggplotly(epi.curve)
